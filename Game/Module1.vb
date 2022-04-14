@@ -9,6 +9,9 @@
 
     End Sub
 
+    Dim playerName As String = ""
+    Dim highScore As Integer = 200
+    Dim FileNum As Integer
     Sub SolutionChecker()
         If Form1.Button1.Text = "1" And
            Form1.Button2.Text = "2" And
@@ -27,6 +30,17 @@
            Form1.Button15.Text = "15" Then
 
             MessageBox.Show("Well Done! You completed the puzzle.", "Shuffle Game", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If Form1.Counter < highScore Then
+                highScore = Form1.Counter
+                Form1.highScoreLabel.Text = "Minimum Clicks: " & Form1.Counter
+                playerName = InputBox("Enter your Name", "Enter Your Name: ")
+                Form1.nameLabel.Text = "Best player: " & playerName
+                FileNum = FreeFile()
+                FileOpen(FileNum, "score.txt", OpenMode.Output)
+                PrintLine(FileNum, playerName)
+                PrintLine(FileNum, highScore)
+                FileClose()
+            End If
         End If
         Form1.Counter = Form1.Counter + 1
         Form1.TextBox1.Text = "Number of Clicks:  " & Form1.Counter
@@ -76,6 +90,15 @@
         Form1.Button14.Text = a(14)
         Form1.Button15.Text = a(15)
         Form1.Button16.Text = ""
+
+        Dim FileNum As Integer
+        FileNum = FreeFile()
+        FileOpen(FileNum, "score.txt", OpenMode.Input)
+        playerName = LineInput(FileNum)
+        highScore = LineInput(FileNum)
+        Form1.nameLabel.Text = "Best player: " & playerName
+        Form1.highScoreLabel.Text = "Minimum Clicks: " & highScore
+        FileClose(FileNum)
 
     End Sub
 End Module

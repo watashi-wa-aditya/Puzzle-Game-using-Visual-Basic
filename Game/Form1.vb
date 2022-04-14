@@ -140,6 +140,7 @@
 
     Private Sub Form1_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
         Call shuffle()
+
     End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
@@ -159,5 +160,21 @@
         If iExit = DialogResult.No Then
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub highScoreLabel_Click(sender As Object, e As EventArgs) Handles highScoreLabel.Click
+
     End Sub
 End Class

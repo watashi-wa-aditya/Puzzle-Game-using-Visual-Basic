@@ -41,6 +41,8 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
+        Me.highScoreLabel = New System.Windows.Forms.Label()
+        Me.nameLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
@@ -234,12 +236,34 @@ Partial Class Form1
         Me.Button18.Text = "Exit"
         Me.Button18.UseVisualStyleBackColor = True
         '
+        'highScoreLabel
+        '
+        Me.highScoreLabel.AutoSize = True
+        Me.highScoreLabel.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.highScoreLabel.Location = New System.Drawing.Point(671, 50)
+        Me.highScoreLabel.Name = "highScoreLabel"
+        Me.highScoreLabel.Size = New System.Drawing.Size(194, 31)
+        Me.highScoreLabel.TabIndex = 2
+        Me.highScoreLabel.Text = "Minimum Clicks:"
+        '
+        'nameLabel
+        '
+        Me.nameLabel.AutoSize = True
+        Me.nameLabel.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.nameLabel.Location = New System.Drawing.Point(671, 9)
+        Me.nameLabel.Name = "nameLabel"
+        Me.nameLabel.Size = New System.Drawing.Size(83, 31)
+        Me.nameLabel.TabIndex = 3
+        Me.nameLabel.Text = "Name:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(1182, 607)
+        Me.Controls.Add(Me.nameLabel)
+        Me.Controls.Add(Me.highScoreLabel)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button18)
         Me.Controls.Add(Me.Button17)
@@ -285,4 +309,6 @@ Partial Class Form1
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button17 As Button
     Friend WithEvents Button18 As Button
+    Friend WithEvents highScoreLabel As Label
+    Friend WithEvents nameLabel As Label
 End Class
